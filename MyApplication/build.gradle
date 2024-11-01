@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2' // Đảm bảo sử dụng phiên bản phù hợp
+        classpath 'com.google.gms:google-services:4.4.2' // Thêm classpath cho Google Services
+    }
+}
+
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.google.gms.google.services) apply false
+}
+
+allprojects {
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
